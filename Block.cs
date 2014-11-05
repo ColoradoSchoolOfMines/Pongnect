@@ -6,7 +6,7 @@ using System.Windows;
 
 namespace ACMX.Games.Pongnect
 {
-    class Paddle
+    class Block
     {
         public double width { get; private set;}
         public double height { get; private set; }
@@ -15,7 +15,7 @@ namespace ACMX.Games.Pongnect
 
         public Point loc { get; set; }
 
-        public Paddle(double width, double height, Point loc, bool isDestroyable)
+        public Block(double width, double height, Point loc, bool isDestroyable)
         {
             this.width = width;
             this.height = height;
