@@ -18,7 +18,11 @@
         <Viewbox Grid.RowSpan="3" Grid.ColumnSpan="2" Stretch="Uniform">
             <Image Name="Canvas" Stretch="Uniform"/>
         </Viewbox>
-        <TextBox Foreground="Gray" Background="Transparent" TextAlignment="Left" BorderBrush="Transparent" Name="LivesText" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" FontSize="50">B</TextBox>
-        <TextBox Foreground="Gray" Background="Transparent"  TextAlignment="Right" BorderBrush="Transparent" Name="ScoreText" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" FontSize="50">F</TextBox>
+        <Line Stroke="White"
+              X1="0" Y1="0"
+              X2="0" Y2="{x:Static SystemParameters.FullPrimaryScreenHeight}"
+              StrokeDashArray="2, 4"
+              Grid.ColumnSpan="2"
+              HorizontalAlignment="Center"/>
     </Grid>
 </Window>

@@ -47,14 +47,17 @@ namespace ACMX.Games.Pongnect
             PADDLEHEIGHT = (int)field.Height/6;
             //BALLSPEED = (int)field.Width / 100;
             // TODO: Setup kinect callbacks
-            this.sensor = sensor;
-            sensor.SkeletonStream.Enable();
-            sensor.DepthStream.Enable();
-            sensor.DepthFrameReady += handleDepthFrame;
-            sensor.SkeletonFrameReady += handleSkeletonFrame;
-            interactionStream = new InteractionStream(sensor, new PongnectInteractionClient());
-            interactionStream.InteractionFrameReady += handleInteractionFrame;
-            sensor.Start();
+            if (sensor != null)
+            {
+                this.sensor = sensor;
+                sensor.SkeletonStream.Enable();
+                sensor.DepthStream.Enable();
+                sensor.DepthFrameReady += handleDepthFrame;
+                sensor.SkeletonFrameReady += handleSkeletonFrame;
+                interactionStream = new InteractionStream(sensor, new PongnectInteractionClient());
+                interactionStream.InteractionFrameReady += handleInteractionFrame;
+                sensor.Start();
+            }
             // Setup ball
             newBall();
             // Setup boundaries
